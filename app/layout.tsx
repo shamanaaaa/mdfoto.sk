@@ -18,9 +18,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mdfoto.sk"),
   title: {
     default: "MDFOTO – Fotograf Nitra | Majka Domanová",
     template: "%s | MDFOTO",
+  },
+  alternates: {
+    canonical: "/",
   },
   description:
     "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí. Majka Domanová – prirodzené, hravé a nezabudnuteľné fotografie.",
@@ -37,11 +41,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "sk_SK",
-    url: "https://mdfoto.sk",
+    url: "/",
     siteName: "MDFOTO",
     title: "MDFOTO – Fotograf Nitra | Majka Domanová",
     description:
       "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí.",
+    images: [
+      {
+        url: "/images/novorodenci/mdfoto-novorodenecke-fotenie (5).jpg",
+        width: 1200,
+        height: 800,
+        alt: "MDFOTO – Fotograf Nitra",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MDFOTO – Fotograf Nitra | Majka Domanová",
+    description:
+      "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí.",
+    images: ["/images/novorodenci/mdfoto-novorodenecke-fotenie (5).jpg"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -49,6 +68,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 

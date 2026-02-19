@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const packageOptions = [
@@ -20,29 +20,60 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("");
   const [selectedPackage, setSelectedPackage] = useState(packageOptions[0]);
   const [note, setNote] = useState("");
-
-  const queryString = useMemo(() => {
-    const params = new URLSearchParams({
-      meno: name,
-      email,
-      telefon: phone,
-      balik: selectedPackage,
-      poznamka: note,
-    });
-    return params.toString();
-  }, [name, email, phone, selectedPackage, note]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const isValid = Boolean(name.trim() && email.trim());
 
   return (
     <form
       className="space-y-5"
-      onSubmit={(event) => {
+      onSubmit={async (event) => {
         event.preventDefault();
+        setSubmitError("");
+
         if (!isValid) {
           return;
         }
-        router.push(`/rezervacia-potvrdenie?${queryString}`);
+
+        try {
+          setIsSubmitting(true);
+
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              phone,
+              selectedPackage,
+              note,
+            }),
+          });
+
+          const result = (await response.json()) as {
+            ok: boolean;
+            message?: string;
+          };
+
+          if (!response.ok || !result.ok) {
+            setSubmitError(
+              result.message ||
+                "Formulár sa nepodarilo odoslať. Skúste to prosím znova."
+            );
+            return;
+          }
+
+          router.push("/rezervacia-potvrdenie?odoslane=1");
+        } catch {
+          setSubmitError(
+            "Formulár sa nepodarilo odoslať. Skúste to prosím znova alebo zavolajte na 0948 505 587."
+          );
+        } finally {
+          setIsSubmitting(false);
+        }
       }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -106,8 +137,18 @@ export default function ContactForm() {
         />
       </label>
 
-      <button type="submit" className="btn-primary" disabled={!isValid}>
-        Pokračovať na potvrdenie
+      {submitError ? (
+        <p className="text-sm text-red-700 bg-red-50 border border-red-200 px-4 py-3">
+          {submitError}
+        </p>
+      ) : null}
+
+      <button
+        type="submit"
+        className="btn-primary"
+        disabled={!isValid || isSubmitting}
+      >
+        {isSubmitting ? "Odosielam..." : "Odoslať dopyt"}
       </button>
     </form>
   );

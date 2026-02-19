@@ -97,6 +97,20 @@ export default function HomePage() {
           <p className="text-center text-xs tracking-widest text-charcoal-300 mt-3">
             – MAJKA DOMANOVÁ
           </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs tracking-wide text-charcoal-300">
+            <Link href="/fotograf-nitra" className="hover:text-cream-100 transition-colors">
+              Fotograf Nitra
+            </Link>
+            <Link href="/portretovy-fotograf-nitra" className="hover:text-cream-100 transition-colors">
+              Portrétny fotograf Nitra
+            </Link>
+            <Link href="/rodinne-fotenie-nitra" className="hover:text-cream-100 transition-colors">
+              Rodinné fotenie Nitra
+            </Link>
+            <Link href="/tehotenske-fotenie-nitra" className="hover:text-cream-100 transition-colors">
+              Tehotenské fotenie Nitra
+            </Link>
+          </div>
         </div>
       </section>
 
