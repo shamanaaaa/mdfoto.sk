@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream-100 text-charcoal-800 font-sans;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-8 py-3.5 bg-charcoal-800 text-cream-100 text-sm tracking-widest uppercase font-sans
+           hover:bg-charcoal-700 transition-colors duration-300 cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply inline-block px-8 py-3.5 border border-charcoal-800 text-charcoal-800 text-sm tracking-widest uppercase font-sans
+           hover:bg-charcoal-800 hover:text-cream-100 transition-colors duration-300 cursor-pointer;
+  }
+
+  .section-label {
+    @apply text-xs tracking-extra-widest uppercase text-rose-muted font-sans;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif text-charcoal-800 leading-tight;
+  }
+
+  .section-subheading {
+    @apply text-2xl md:text-3xl font-serif text-charcoal-800;
+  }
+
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  /* Lightbox overrides */
+  .yarl__container {
+    background-color: rgba(17, 17, 17, 0.97) !important;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .writing-mode-vertical {
+    writing-mode: vertical-lr;
+  }
+}
