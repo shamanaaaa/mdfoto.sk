@@ -5,6 +5,7 @@ const baseUrl = "https://mdfoto.sk";
 const routes = [
   "/",
   "/fotograf-nitra",
+  "/novorodenecke-fotenie-nitra",
   "/portretovy-fotograf-nitra",
   "/rodinne-fotenie-nitra",
   "/tehotenske-fotenie-nitra",

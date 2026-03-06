@@ -4,6 +4,122 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import JsonLd from "@/components/JsonLd";
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "Photographer"],
+  "@id": "https://mdfoto.sk/#business",
+  name: "MDFOTO – Majka Domanová",
+  alternateName: "MDFOTO",
+  url: "https://mdfoto.sk",
+  logo: "https://mdfoto.sk/favicon.ico",
+  image: "https://mdfoto.sk/images/o-mne/mdfoto-maria-domanova-mdfoto.png",
+  description:
+    "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí. 12+ rokov skúseností, ateliér v Cabaj-Čápore.",
+  telephone: "+421948505587",
+  email: "mdfoto.sk@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Cabaj-Čápor",
+    addressRegion: "Nitriansky kraj",
+    addressCountry: "SK",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 48.2858,
+    longitude: 18.1012,
+  },
+  areaServed: [
+    { "@type": "City", name: "Nitra" },
+    { "@type": "City", name: "Cabaj-Čápor" },
+    { "@type": "City", name: "Zlaté Moravce" },
+    { "@type": "City", name: "Topoľčany" },
+    { "@type": "City", name: "Šaľa" },
+    { "@type": "City", name: "Levice" },
+    { "@type": "City", name: "Hlohovec" },
+    { "@type": "City", name: "Komárno" },
+    { "@type": "City", name: "Galanta" },
+    { "@type": "City", name: "Nové Zámky" },
+  ],
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "08:00",
+    closes: "20:00",
+  },
+  priceRange: "80€–150€",
+  currenciesAccepted: "EUR",
+  paymentAccepted: "Cash, Bank Transfer",
+  sameAs: ["https://www.facebook.com/mdfoto.sk"],
+  founder: {
+    "@type": "Person",
+    name: "Majka Domanová",
+    jobTitle: "Fotografka",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Služby fotenia",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Novorodenecké fotenie",
+          description:
+            "Profesionálne fotenie novorodencov v bezpečnom, vykúrenom ateliéri. Oblečenie, čelenky a doplnky k dispozícii.",
+          url: "https://mdfoto.sk/novorodenci",
+        },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+          minPrice: "100",
+          maxPrice: "150",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Rodinné a detské fotenie",
+          description:
+            "Hravé rodinné a narodeninové fotenie v ateliéri alebo exteriéri. Šaty, doplnky a výzdoba k dispozícii.",
+          url: "https://mdfoto.sk/rodinky-deti",
+        },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+          minPrice: "80",
+          maxPrice: "130",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Tehotenské fotenie",
+          description:
+            "Elegantné tehotenské fotenie v ateliéri aj exteriéri. Šaty, čipkované župany a doplnky k dispozícii.",
+          url: "https://mdfoto.sk/tehulky",
+        },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+          minPrice: "90",
+          maxPrice: "130",
+        },
+      },
+    ],
+  },
+};
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -23,20 +139,23 @@ export const metadata: Metadata = {
     default: "MDFOTO – Fotograf Nitra | Majka Domanová",
     template: "%s | MDFOTO",
   },
-  alternates: {
-    canonical: "/",
-  },
   description:
-    "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí. Majka Domanová – prirodzené, hravé a nezabudnuteľné fotografie.",
+    "Profesionálne rodinné, novorodenecké a tehotenské fotenie v Nitre a okolí. Majka Domanová – 12+ rokov skúseností, šaty a doplnky k dispozícii, 7 dní v týždni. Od 80 €.",
   keywords: [
     "fotenie Nitra",
-    "rodinné fotenie",
-    "novorodenecké fotenie",
-    "tehotenské fotenie",
-    "detské fotenie",
+    "rodinné fotenie Nitra",
+    "novorodenecké fotenie Nitra",
+    "tehotenské fotenie Nitra",
+    "fotenie bábätiek Nitra",
+    "detské fotenie Nitra",
+    "narodeninové fotenie Nitra",
+    "fotograf Nitra",
     "Majka Domanová",
     "mdfoto",
-    "fotograf Nitra",
+    "fotograf Cabaj-Čápor",
+    "novorodenecké fotenie",
+    "rodinné fotenie",
+    "tehotenské fotenie",
   ],
   openGraph: {
     type: "website",
@@ -45,13 +164,13 @@ export const metadata: Metadata = {
     siteName: "MDFOTO",
     title: "MDFOTO – Fotograf Nitra | Majka Domanová",
     description:
-      "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí.",
+      "Profesionálne rodinné, novorodenecké a tehotenské fotenie v Nitre a okolí. 12+ rokov skúseností. Od 80 €.",
     images: [
       {
-        url: "/images/novorodenci/mdfoto-novorodenecke-fotenie (5).jpg",
+        url: "/images/rodinky-deti/mdfoto-rodinne-fotenie (23).jpg",
         width: 1200,
         height: 800,
-        alt: "MDFOTO – Fotograf Nitra",
+        alt: "MDFOTO – Fotograf Nitra – Rodinné fotenie",
       },
     ],
   },
@@ -59,8 +178,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MDFOTO – Fotograf Nitra | Majka Domanová",
     description:
-      "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí.",
-    images: ["/images/novorodenci/mdfoto-novorodenecke-fotenie (5).jpg"],
+      "Profesionálne rodinné, novorodenecké a tehotenské fotenie v Nitre a okolí. 12+ rokov skúseností. Od 80 €.",
+    images: ["/images/rodinky-deti/mdfoto-rodinne-fotenie (23).jpg"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -86,6 +205,7 @@ export default function RootLayout({
   return (
     <html lang="sk" className={`${playfair.variable} ${inter.variable}`}>
       <body className="flex flex-col min-h-screen">
+        <JsonLd data={localBusinessSchema} />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />

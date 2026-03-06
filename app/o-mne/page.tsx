@@ -5,7 +5,8 @@ import PageHeader from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "O mne",
   description:
-    "Spoznajte Majku Domanovú z MDFOTO – fotografku špecializujúcu sa na novorodencov, rodiny a tehotenské fotenie v Nitre.",
+    "Majka Domanová – fotografka z MDFOTO s 12+ rokmi skúseností. Špecializácia na novorodencov, rodiny a tehotenské fotenie v Nitre. Mama 3 synov.",
+  alternates: { canonical: "/o-mne" },
 };
 
 export default function AboutPage() {

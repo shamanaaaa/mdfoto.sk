@@ -10,11 +10,19 @@ const footerLinks = [
   { href: "/kontakt", label: "Kontakt" },
 ];
 
+const seoLinks = [
+  { href: "/fotograf-nitra", label: "Fotograf Nitra" },
+  { href: "/novorodenecke-fotenie-nitra", label: "Novorodenecké fotenie Nitra" },
+  { href: "/rodinne-fotenie-nitra", label: "Rodinné fotenie Nitra" },
+  { href: "/tehotenske-fotenie-nitra", label: "Tehotenské fotenie Nitra" },
+  { href: "/portretovy-fotograf-nitra", label: "Portrétny fotograf Nitra" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-charcoal-900 text-cream-300">
       <div className="container-wide py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-serif text-2xl text-cream-100 tracking-widest">
@@ -42,6 +50,23 @@ export default function Footer() {
             <h4 className="section-label text-rose-muted">Navigácia</h4>
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-charcoal-300 hover:text-cream-100 transition-colors tracking-wide"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* SEO Links */}
+          <div className="space-y-4">
+            <h4 className="section-label text-rose-muted">Služby</h4>
+            <ul className="space-y-2.5">
+              {seoLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

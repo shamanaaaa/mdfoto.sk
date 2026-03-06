@@ -2,11 +2,52 @@ import type { Metadata } from "next";
 import Gallery, { type GalleryImage } from "@/components/Gallery";
 import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Kedy je ideálny čas na novorodenecké fotenie?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ideálne je prísť v prvých 5–14 dňoch po narodení, kedy bábätko veľa spí a dá sa ľahko polohovat a wrapovať.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Ako dlho trvá novorodenecké fotenie?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Fotenie trvá cca 1–3 hodiny podľa zvoleného balíka. Počas fotenia sa bábätko priebežne kojí a uspáva.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Musím si priniesť vlastné oblečenie pre bábätko?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Nie, v ateliéri mám k dispozícii oblečenie, čelenky, čiapočky a ďalšie doplnky pre novorodencov.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Koľko stojí novorodenecké fotenie v Nitre?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Cena novorodeneckého fotenia je od 100 € (Balík 1 – 5 retušovaných fotiek) do 150 € (Balík 2 – 10 retušovaných fotiek s rodinou). Viac info na stránke cenník.",
+      },
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Novorodenecké fotenie",
   description:
-    "Novorodenecké fotenie v ateliéri v Cabaj-Čápore (Nitra). Prvé dni života zachytené s láskou a odbornosťou.",
+    "Novorodenecké fotenie v ateliéri v Cabaj-Čápore (6 km od Nitry). Bezpečné, profesionálne a plné lásky. Oblečenie a doplnky k dispozícii. Od 100 €.",
+  alternates: { canonical: "/novorodenci" },
 };
 
 const images: GalleryImage[] = Array.from({ length: 27 }, (_, i) => ({
@@ -17,6 +58,8 @@ const images: GalleryImage[] = Array.from({ length: 27 }, (_, i) => ({
 export default function NovorodenciPage() {
   return (
     <>
+      <JsonLd data={faqSchema} />
+
       <PageHeader
         eyebrow="Galéria"
         title="Novorodenci"
@@ -59,6 +102,15 @@ export default function NovorodenciPage() {
             Pozrieť cenník
           </Link>
         </div>
+        <p className="mt-6 text-sm text-charcoal-300">
+          Viac informácii nájdete na stránke{" "}
+          <Link
+            href="/novorodenecke-fotenie-nitra"
+            className="text-rose-muted hover:underline"
+          >
+            novorodenecké fotenie Nitra
+          </Link>
+        </p>
       </section>
     </>
   );

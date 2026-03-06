@@ -1,6 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight, Heart, Camera, Clock } from "lucide-react";
+import JsonLd from "@/components/JsonLd";
+
+const homepageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://mdfoto.sk/#website",
+  name: "MDFOTO",
+  url: "https://mdfoto.sk",
+  description:
+    "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí.",
+  publisher: { "@id": "https://mdfoto.sk/#business" },
+  inLanguage: "sk",
+};
 
 const categories = [
   {
@@ -14,7 +27,7 @@ const categories = [
     href: "/rodinky-deti",
     label: "Rodinky & Deti",
     desc: "Hravé, prirodzené a plné lásky – rodinné príbehy, ktoré zostanú.",
-    src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (1).jpg",
+    src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (25).jpg",
     alt: "Rodinné fotenie Nitra",
   },
   {
@@ -47,14 +60,26 @@ const features = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={homepageSchema} />
+
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="relative h-screen min-h-[600px] flex items-end pb-20 md:pb-28 overflow-hidden">
+        {/* Portrait crop for mobile */}
         <Image
-          src="/images/novorodenci/mdfoto-novorodenecke-fotenie (5).jpg"
-          alt="MDFOTO – Majka Domanová – Fotograf Nitra"
+          src="/images/rodinky-deti/mdfoto-rodinne-fotenie (25).jpg"
+          alt="MDFOTO – Majka Domanová – Rodinné fotenie Nitra"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center block md:hidden"
+          sizes="100vw"
+        />
+        {/* Landscape crop for desktop */}
+        <Image
+          src="/images/rodinky-deti/mdfoto-rodinne-fotenie (23).jpg"
+          alt="MDFOTO – Majka Domanová – Rodinné fotenie Nitra"
+          fill
+          priority
+          className="object-cover object-center hidden md:block"
           sizes="100vw"
         />
         {/* Gradient overlay */}
@@ -103,6 +128,9 @@ export default function HomePage() {
             </Link>
             <Link href="/portretovy-fotograf-nitra" className="hover:text-cream-100 transition-colors">
               Portrétny fotograf Nitra
+            </Link>
+            <Link href="/novorodenecke-fotenie-nitra" className="hover:text-cream-100 transition-colors">
+              Novorodenecké fotenie Nitra
             </Link>
             <Link href="/rodinne-fotenie-nitra" className="hover:text-cream-100 transition-colors">
               Rodinné fotenie Nitra
@@ -219,14 +247,14 @@ export default function HomePage() {
       {/* ─── CTA BANNER ───────────────────────────────────────────── */}
       <section className="relative overflow-hidden">
         <Image
-          src="/images/rodinky-deti/mdfoto-rodinne-fotenie (6).jpg"
+          src="/images/rodinky-deti/mdfoto-rodinne-fotenie (24).jpg"
           alt="Rodinné fotenie"
           fill
           className="object-cover"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-charcoal-900/65" />
-        <div className="relative container-wide py-24 md:py-32 text-center">
+        <div className="relative container-wide py-32 md:py-44 text-center">
           <p className="section-label text-rose-light mb-4">
             Nitra & Okolie – 7 dní v týždni
           </p>

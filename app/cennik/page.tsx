@@ -4,7 +4,8 @@ import PageHeader from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "Cenník",
   description:
-    "Cenník tehotenského, rodinného a novorodeneckého fotenia v Nitre. Balíky, doplatky a dôležité informácie.",
+    "Cenník fotenia v Nitre – novorodenecké od 100 €, rodinné od 80 €, tehotenské od 90 €. Balíky, doplatky a dôležité informácie. MDFOTO.",
+  alternates: { canonical: "/cennik" },
 };
 
 type Package = {

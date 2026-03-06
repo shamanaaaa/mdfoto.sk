@@ -5,7 +5,8 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontaktujte MDFOTO – rezervácia termínu, výber balíka a poznámka pre fotografku.",
+    "Kontaktujte MDFOTO a rezervujte si termín fotenia v Nitre. Formulár, WhatsApp alebo telefón 0948 505 587. 7 dní v týždni.",
+  alternates: { canonical: "/kontakt" },
 };
 
 export default function KontaktPage() {

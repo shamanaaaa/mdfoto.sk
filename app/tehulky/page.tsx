@@ -2,11 +2,52 @@ import type { Metadata } from "next";
 import Gallery, { type GalleryImage } from "@/components/Gallery";
 import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "V koľkom týždni tehotenstva je ideálne prísť na fotenie?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ideálny čas je medzi 30.–36. týždňom tehotenstva, kedy je brušku krásne vidieť a mamička sa ešte cíti pohodlne.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Musím si priniesť vlastné šaty na tehotenské fotenie?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Nie, v ateliéri mám k dispozícii šaty, čipkované župany aj body špeciálne na tehotenské fotenie. Môžete si však doniesť aj vlastné.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Koľko stojí tehotenské fotenie v Nitre?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tehotenské fotenie stojí od 90 € (Balík 1 – 5 retušovaných fotiek) do 130 € (Balík 2 – 10 retušovaných fotiek). Vizážistka je k dispozícii za príplatok 45 €.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Môže prísť na fotenie aj partner alebo starší súrodenec?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Samozrejme! Partner a deti sú vítaní. Spoločné zábery sú krásnym doplnkom tehotenského fotenia.",
+      },
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Tehotenské fotenie",
   description:
-    "Tehotenské fotenie v Nitre – krása materstva zachytená v tých najkrajších momentoch. Ateliér aj exteriér, šaty k dispozícii.",
+    "Tehotenské fotenie v Nitre – krása materstva zachytená v nadčasových fotografiách. Šaty a doplnky k dispozícii, ateliér aj exteriér. Od 90 €.",
+  alternates: { canonical: "/tehulky" },
 };
 
 const images: GalleryImage[] = Array.from({ length: 16 }, (_, i) => ({
@@ -17,6 +58,8 @@ const images: GalleryImage[] = Array.from({ length: 16 }, (_, i) => ({
 export default function TehulkyPage() {
   return (
     <>
+      <JsonLd data={faqSchema} />
+
       <PageHeader
         eyebrow="Galéria"
         title="Tehuľky"
@@ -59,6 +102,15 @@ export default function TehulkyPage() {
             Pozrieť cenník
           </Link>
         </div>
+        <p className="mt-6 text-sm text-charcoal-300">
+          Viac informácii nájdete na stránke{" "}
+          <Link
+            href="/tehotenske-fotenie-nitra"
+            className="text-rose-muted hover:underline"
+          >
+            tehotenské fotenie Nitra
+          </Link>
+        </p>
       </section>
     </>
   );
