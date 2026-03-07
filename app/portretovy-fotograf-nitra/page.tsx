@@ -3,6 +3,45 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Čo si obliecť na portrétne fotenie?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Odporúčam jednoduché, jednofarebné oblečenie bez výrazných vzorov. Poradím vám pri výbere, aby výsledné fotografie pôsobili nadčasovo a prirodzene.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Kde prebieha portrétne fotenie?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Fotenie prebieha v ateliéri v Cabaj-Čápore (6 km od Nitry) alebo v exteriéri podľa vašich preferencií – v parku, meste alebo prírode.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Koľko stojí portrétne fotenie v Nitre?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Portrétne fotenie je zahrnuté v rodinných balíkoch od 80 €. Presné ceny nájdete na stránke cenník alebo ma kontaktujte priamo.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Je portrétne fotenie vhodné aj pre muža?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Samozrejme. Fotím portréty žien, mužov, párov aj celých rodín. Každého navediem tak, aby sa cítil uvoľnene a výsledok bol prirodzený.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Portrétny fotograf Nitra",
   description:
@@ -38,12 +77,14 @@ const breadcrumbSchema = {
 export default function PortretnyFotografNitraPage() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <JsonLd data={breadcrumbSchema} />
 
       <PageHeader
         eyebrow="Portrétny fotograf Nitra"
         title="Portréty, ktoré vás vystihnú"
         description="Prirodzené portrétne fotenie bez stresu – vhodné pre osobný branding, párové aj rodinné portréty."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Portrétny fotograf Nitra" }]}
       />
 
       <section className="py-16 md:py-20">
@@ -103,6 +144,53 @@ export default function PortretnyFotografNitraPage() {
             <strong>Šale</strong>, <strong>Hlohovca</strong>,{" "}
             <strong>Piešťan</strong> a celého okolia.
           </p>
+
+          <h2 className="section-subheading pt-6">Najčastejšie otázky</h2>
+          <div className="space-y-4">
+            <details className="border border-cream-300 p-4">
+              <summary className="font-serif text-charcoal-800 cursor-pointer">
+                Čo si obliecť na portrétne fotenie?
+              </summary>
+              <p className="mt-3 text-sm">
+                Odporúčam jednoduché, jednofarebné oblečenie bez výrazných
+                vzorov. Poradím vám pri výbere, aby výsledné fotografie
+                pôsobili nadčasovo a prirodzene.
+              </p>
+            </details>
+            <details className="border border-cream-300 p-4">
+              <summary className="font-serif text-charcoal-800 cursor-pointer">
+                Kde prebieha portrétne fotenie?
+              </summary>
+              <p className="mt-3 text-sm">
+                Fotenie prebieha v ateliéri v Cabaj-Čápore (6 km od Nitry)
+                alebo v exteriéri podľa vašich preferencií – v parku, meste
+                alebo prírode.
+              </p>
+            </details>
+            <details className="border border-cream-300 p-4">
+              <summary className="font-serif text-charcoal-800 cursor-pointer">
+                Koľko stojí portrétne fotenie v Nitre?
+              </summary>
+              <p className="mt-3 text-sm">
+                Portrétne fotenie je zahrnuté v rodinných balíkoch od 80 €.
+                Presné ceny nájdete na{" "}
+                <Link href="/cennik" className="text-rose-dark hover:underline">
+                  stránke cenník
+                </Link>{" "}
+                alebo ma kontaktujte priamo.
+              </p>
+            </details>
+            <details className="border border-cream-300 p-4">
+              <summary className="font-serif text-charcoal-800 cursor-pointer">
+                Je portrétne fotenie vhodné aj pre muža?
+              </summary>
+              <p className="mt-3 text-sm">
+                Samozrejme. Fotím portréty žien, mužov, párov aj celých
+                rodín. Každého navediem tak, aby sa cítil uvoľnene a výsledok
+                bol prirodzený.
+              </p>
+            </details>
+          </div>
 
           <h2 className="section-subheading pt-4">Súvisiace služby</h2>
           <ul className="space-y-2 list-disc pl-6">

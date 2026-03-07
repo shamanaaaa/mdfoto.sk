@@ -50,9 +50,39 @@ export const metadata: Metadata = {
   alternates: { canonical: "/novorodenci" },
 };
 
+const novorodenciAlts = [
+  "Novorodenec wrapovaný v bielej deke – novorodenecké fotenie Nitra MDFOTO",
+  "Bábätko spinkajúce v košíku – novorodenecké fotenie ateliér Cabaj-Čápor",
+  "Novorodenec s rodičmi – rodinné novorodenecké fotenie Nitra",
+  "Bábätko v čelenke na kvetinkovom pozadí – novorodenecké fotenie MDFOTO",
+  "Novorodenec polohovaný v hniezdočku – bezpečné fotenie bábätka Nitra",
+  "Mama drží novorodenca – novorodenecké fotenie Nitra Majka Domanová",
+  "Bábátko zabalené v jemnej deke – novorodenecké fotenie ateliér",
+  "Novorodenec s čiapočkou – detské fotenie Nitra MDFOTO",
+  "Rodičia s novorodencom – rodinné novorodenecké fotenie v Nitre",
+  "Novorodenec na detskej podušce – fotenie bábätiek Nitra",
+  "Bábätko v košíku s výzdobou – novorodenecké fotenie ateliér Nitra",
+  "Novorodenec wrapovaný v ružovej deke – MDFOTO novorodenecké fotenie",
+  "Mama so spinkajúcim bábätkom – novorodenecké fotenie Nitra",
+  "Novorodenec na plyšovom medveďovi – detské fotenie ateliér Cabaj-Čápor",
+  "Bábätko s čelenkou z kvetov – novorodenecké fotenie Nitra MDFOTO",
+  "Papa drží novorodenca – rodinné novorodenecké fotenie Nitra",
+  "Novorodenec v drevenom košíku – bezpečné fotenie bábätiek",
+  "Bábátko spinkajúce – novorodenecké fotenie ateliér pri Nitre",
+  "Novorodenec s rodičmi a súrodencami – rodinné fotenie Nitra",
+  "Novorodenec v bielom – novorodenecké fotenie MDFOTO Cabaj-Čápor",
+  "Bábätko na deťskom zábaliku – novorodenecké fotenie Nitra",
+  "Novorodenec v profile – jemné novorodenecké fotenie ateliér Nitra",
+  "Mama a bábätko – emotívne novorodenecké fotenie Nitra MDFOTO",
+  "Novorodenec zavretý v dlaniach rodiča – novorodenecké fotenie",
+  "Bábätko v háčkovanej čiapočke – novorodenecké fotenie Nitra",
+  "Rodičia s novorodencom v ateliéri – MDFOTO fotenie Cabaj-Čápor",
+  "Novorodenec v zábalike v košíku – novorodenecké fotenie Nitra MDFOTO",
+];
+
 const images: GalleryImage[] = Array.from({ length: 27 }, (_, i) => ({
   src: `/images/novorodenci/mdfoto-novorodenecke-fotenie (${i + 1}).jpg`,
-  alt: `Novorodenecké fotenie Nitra – záber ${i + 1}`,
+  alt: novorodenciAlts[i],
 }));
 
 export default function NovorodenciPage() {
@@ -64,6 +94,7 @@ export default function NovorodenciPage() {
         eyebrow="Galéria"
         title="Novorodenci"
         description="Prvé dni života sú vzácne a prechádzajú rýchlo. Zachytím ich bezpečne, s láskou a v kľudnej atmosfére nášho vyhriatého ateliéra."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Novorodenci" }]}
       />
 
       {/* Info strip */}

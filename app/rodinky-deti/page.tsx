@@ -50,14 +50,46 @@ export const metadata: Metadata = {
   alternates: { canonical: "/rodinky-deti" },
 };
 
+const rodinkyAlts: Record<number, string> = {
+  23: "Rodina s deťmi v ateliéri – rodinné fotenie Nitra MDFOTO",
+  24: "Rodičia a deti v exteriéri – rodinné fotenie Nitra Majka Domanová",
+  25: "Rodinný portrét v ateliéri – rodinné fotenie MDFOTO Cabaj-Čápor",
+  26: "Mama s deťmi – hravé rodinné fotenie Nitra MDFOTO",
+};
+
+const existingAlts = [
+  "Rodičia s bábätkom – rodinné novorodenecké fotenie Nitra MDFOTO",
+  "Deti sa smejú – hravé detské fotenie ateliér Nitra",
+  "Rodinný portrét – rodinné fotenie Cabaj-Čápor MDFOTO",
+  "Narodeninové fotenie s balónmi – detské fotenie Nitra",
+  "Mama s dieťaťom – emotívne rodinné fotenie Nitra",
+  "Dievčatko v šatách – detské fotenie ateliér MDFOTO Nitra",
+  "Rodinné foto v exteriéri – rodinné fotenie Nitra MDFOTO",
+  "Súrodenci sa objímajú – súrodenecké fotenie Nitra",
+  "Dieťa pri torte – narodeninové fotenie Nitra MDFOTO",
+  "Papa s dieťaťom – rodinné fotenie ateliér Cabaj-Čápor",
+  "Kúpacie fotenie bábätka – detské fotenie Nitra MDFOTO",
+  "Rodinný portrét s babkou a dedkom – viacgeneračné fotenie Nitra",
+  "Dievčatko s čelenkou – detské fotenie ateliér MDFOTO",
+  "Chlapček s motýlikom – detské fotenie Nitra Majka Domanová",
+  "Mama, papa a deti – kompletná rodinná fotografia Nitra MDFOTO",
+  "Narodeninové fotenie č.1 – detské narodeninové fotenie Nitra",
+  "Deti v hravej póze – detské fotenie ateliér Nitra MDFOTO",
+  "Rodinné objatie – emotívne rodinné fotenie Nitra",
+  "Dieťa s hračkou – hravé detské fotenie MDFOTO Cabaj-Čápor",
+  "Rodinné foto – rodinné fotenie Nitra Majka Domanová",
+  "Mama s dcérou – krásne rodinné fotenie ateliér Nitra",
+  "Rodinný portrét vonku – exteriérové rodinné fotenie Nitra MDFOTO",
+];
+
 const newImages: GalleryImage[] = [23, 24, 25, 26].map((n) => ({
   src: `/images/rodinky-deti/mdfoto-rodinne-fotenie (${n}).jpg`,
-  alt: `Rodinné fotenie Nitra – záber ${n}`,
+  alt: rodinkyAlts[n],
 }));
 
 const existingImages: GalleryImage[] = Array.from({ length: 22 }, (_, i) => ({
   src: `/images/rodinky-deti/mdfoto-rodinne-fotenie (${i + 1}).jpg`,
-  alt: `Rodinné fotenie Nitra – záber ${i + 1}`,
+  alt: existingAlts[i],
 }));
 
 const images: GalleryImage[] = [...newImages, ...existingImages];
@@ -71,6 +103,7 @@ export default function RodinkyDetiPage() {
         eyebrow="Galéria"
         title="Rodinky & Deti"
         description="Hravé, prirodzené a nezabudnuteľné momenty pre vás a vaše deti. Fotenia sú navrhnuté tak, aby ste sa cítili uvoľnene – ako rodina."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Rodinky & Deti" }]}
       />
 
       {/* Info strip */}

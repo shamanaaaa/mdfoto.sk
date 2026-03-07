@@ -85,6 +85,7 @@ export default function RodinneFotenieNitraPage() {
         eyebrow="Rodinné fotenie Nitra"
         title="Rodinné fotenie plné emócií"
         description="Zachytím momenty smiechu, blízkosti a prirodzenej radosti vašej rodiny – v ateliéri pri Nitre alebo v exteriéri."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Rodinné fotenie Nitra" }]}
       />
 
       <section className="py-16 md:py-20">

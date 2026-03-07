@@ -50,9 +50,28 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tehulky" },
 };
 
+const tehulkyAlts = [
+  "Tehotná mamička v dlhých šatách – tehotenské fotenie Nitra MDFOTO",
+  "Budúca mamička s bruškom – tehotenské fotenie ateliér Cabaj-Čápor",
+  "Tehotná žena v čipkovanom župane – elegantné tehotenské fotenie Nitra",
+  "Mamička v exteriéri – tehotenské fotenie príroda Nitra MDFOTO",
+  "Tehotná mamička s partnerom – párové tehotenské fotenie Nitra",
+  "Bruško v detailnom zábere – tehotenské fotenie ateliér MDFOTO",
+  "Budúca mamička v bielych šatách – nadčasové tehotenské fotenie Nitra",
+  "Tehotná žena s dieťaťom – rodinné tehotenské fotenie Nitra",
+  "Mamička sa dotýka bruška – emotívne tehotenské fotenie MDFOTO",
+  "Tehotná žena v elegantných šatách – tehotenské fotenie ateliér Nitra",
+  "Budúca mamička s partnerom v exteriéri – tehotenské fotenie Nitra",
+  "Detail bruška tehotnej mamičky – tehotenské fotenie MDFOTO Cabaj-Čápor",
+  "Tehotná žena v čipkových šatách – tehotenské fotenie Nitra MDFOTO",
+  "Mamička čaká bábätko – rodinné tehotenské fotenie ateliér Nitra",
+  "Budúca mamička v elegantnom outfite – tehotenské fotenie MDFOTO",
+  "Tehotná žena s kyticou – romantické tehotenské fotenie Nitra",
+];
+
 const images: GalleryImage[] = Array.from({ length: 16 }, (_, i) => ({
   src: `/images/tehulky/mdfoto-tehotenske-fotenie (${i + 1}).jpg`,
-  alt: `Tehotenské fotenie Nitra – záber ${i + 1}`,
+  alt: tehulkyAlts[i],
 }));
 
 export default function TehulkyPage() {
@@ -64,6 +83,7 @@ export default function TehulkyPage() {
         eyebrow="Galéria"
         title="Tehuľky"
         description="Krása materstva si zaslúži byť zachytená. Vytvoríme spolu nadčasové fotografie, na ktoré budete hrdá celý život."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Tehuľky" }]}
       />
 
       {/* Info strip */}

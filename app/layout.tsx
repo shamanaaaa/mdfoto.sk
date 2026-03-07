@@ -8,12 +8,17 @@ import JsonLd from "@/components/JsonLd";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "Photographer"],
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://mdfoto.sk/#business",
   name: "MDFOTO – Majka Domanová",
   alternateName: "MDFOTO",
   url: "https://mdfoto.sk",
-  logo: "https://mdfoto.sk/favicon.ico",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://mdfoto.sk/images/o-mne/mdfoto-maria-domanova-mdfoto.png",
+    width: 800,
+    height: 1000,
+  },
   image: "https://mdfoto.sk/images/o-mne/mdfoto-maria-domanova-mdfoto.png",
   description:
     "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí. 12+ rokov skúseností, ateliér v Cabaj-Čápore.",
@@ -42,20 +47,22 @@ const localBusinessSchema = {
     { "@type": "City", name: "Galanta" },
     { "@type": "City", name: "Nové Zámky" },
   ],
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    opens: "08:00",
-    closes: "20:00",
-  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "08:00",
+      closes: "20:00",
+    },
+  ],
   priceRange: "80€–150€",
   currenciesAccepted: "EUR",
   paymentAccepted: "Cash, Bank Transfer",

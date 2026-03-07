@@ -115,10 +115,18 @@ export default function Footer() {
             © {new Date().getFullYear()} MDFOTO – Majka Domanová. Všetky
             práva vyhradené.
           </p>
-          <p className="text-center">
-            Neupravené zábery slúžia len na osobné účely. Akýkoľvek ďalší
-            zásah do fotiek bez súhlasu autora je zakázaný.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-center">
+            <p>
+              Neupravené zábery slúžia len na osobné účely. Akýkoľvek ďalší
+              zásah do fotiek bez súhlasu autora je zakázaný.
+            </p>
+            <Link
+              href="/ochrana-sukromia"
+              className="whitespace-nowrap hover:text-cream-200 transition-colors"
+            >
+              Ochrana súkromia
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

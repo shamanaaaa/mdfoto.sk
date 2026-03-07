@@ -85,6 +85,7 @@ export default function FotografNitraPage() {
         eyebrow="Fotograf Nitra"
         title="Profesionálny fotograf v Nitre"
         description="Fotenie pre rodiny, budúce mamičky, deti aj novorodencov v Nitre a okolí do 100 km."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Fotograf Nitra" }]}
       />
 
       <section className="py-16 md:py-20">

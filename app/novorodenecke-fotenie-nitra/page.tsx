@@ -93,6 +93,7 @@ export default function NovorodeneckeFotenieNitraPage() {
         eyebrow="Novorodenecké fotenie Nitra"
         title="Fotenie novorodencov v Nitre a okolí"
         description="Bezpečné, profesionálne a plné lásky – zachytím tie najkrajšie prvé dni vášho bábätka."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Novorodenecké fotenie Nitra" }]}
       />
 
       <section className="py-16 md:py-20">

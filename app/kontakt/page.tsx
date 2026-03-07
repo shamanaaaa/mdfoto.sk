@@ -16,6 +16,7 @@ export default function KontaktPage() {
         eyebrow="Kontakt"
         title="Rezervácia termínu"
         description="Napíšte mi a spolu nastavíme ideálny termín aj balík fotenia."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Kontakt" }]}
       />
 
       <section className="py-16 md:py-20">

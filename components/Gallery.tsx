@@ -59,7 +59,6 @@ export default function Gallery({ images, columns = 3 }: GalleryProps) {
                 height={800}
                 quality={70}
                 loading={i < 3 ? "eager" : "lazy"}
-                unoptimized
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />

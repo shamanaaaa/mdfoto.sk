@@ -1,5 +1,112 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import JsonLd from "@/components/JsonLd";
+
+const cennikSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Cenník fotenia – MDFOTO",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "Service",
+        name: "Novorodenecké fotenie",
+        provider: { "@id": "https://mdfoto.sk/#business" },
+        url: "https://mdfoto.sk/novorodenecke-fotenie-nitra",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "Balík 1",
+            price: "100",
+            priceCurrency: "EUR",
+            description: "5 retušovaných fotiek, tlač 10×15 cm, USB, kartička o bábätku",
+          },
+          {
+            "@type": "Offer",
+            name: "Balík 2",
+            price: "150",
+            priceCurrency: "EUR",
+            description: "10 retušovaných fotiek s rodinou, 2–3 hodiny, USB, kartička",
+          },
+        ],
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "Service",
+        name: "Rodinné a narodeninové fotenie",
+        provider: { "@id": "https://mdfoto.sk/#business" },
+        url: "https://mdfoto.sk/rodinne-fotenie-nitra",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "Balík 1",
+            price: "80",
+            priceCurrency: "EUR",
+            description: "5 retušovaných fotiek detí, tlač 10×15 cm, USB",
+          },
+          {
+            "@type": "Offer",
+            name: "Balík 2",
+            price: "130",
+            priceCurrency: "EUR",
+            description: "10 retušovaných fotiek celej rodiny, ateliér aj exteriér, USB",
+          },
+        ],
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      item: {
+        "@type": "Service",
+        name: "Tehotenské fotenie",
+        provider: { "@id": "https://mdfoto.sk/#business" },
+        url: "https://mdfoto.sk/tehotenske-fotenie-nitra",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "Balík 1",
+            price: "90",
+            priceCurrency: "EUR",
+            description: "5 retušovaných fotiek, tlač 10×15 cm, USB, len ateliér",
+          },
+          {
+            "@type": "Offer",
+            name: "Balík 2",
+            price: "130",
+            priceCurrency: "EUR",
+            description: "10 retušovaných fotiek, ateliér aj exteriér, USB",
+          },
+        ],
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Domov",
+      item: "https://mdfoto.sk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Cenník",
+      item: "https://mdfoto.sk/cennik",
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Cenník",
@@ -133,10 +240,13 @@ const priceSections: PriceSection[] = [
 export default function CennikPage() {
   return (
     <>
+      <JsonLd data={cennikSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHeader
         eyebrow="Cenník"
         title="Balíky fotenia"
         description="Presný rozsah a termín spolu doladíme podľa vašich predstáv."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Cenník" }]}
       />
 
       <section className="py-16 md:py-20">
@@ -181,6 +291,28 @@ export default function CennikPage() {
             súkromného albumu, nie na internet. Je zakázaný akýkoľvek ďalší
             zásah do upravených aj neupravených fotiek bez súhlasu autora.
           </p>
+        </div>
+      </section>
+
+      <section className="bg-charcoal-800 py-16 text-center">
+        <p className="section-label text-rose-muted mb-3">Máte záujem?</p>
+        <h2 className="font-serif text-3xl text-cream-100 mb-6">
+          Rezervujte si termín fotenia
+        </h2>
+        <p className="text-cream-200 text-sm mb-8 max-w-md mx-auto leading-relaxed">
+          Spolu doladíme balík aj termín podľa vašich predstáv. Fotím 7 dní
+          v týždni vrátane víkendov.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/kontakt" className="btn-primary text-center">
+            Overiť voľný termín
+          </Link>
+          <Link
+            href="/fotograf-nitra"
+            className="inline-block px-8 py-3.5 border border-cream-300 text-cream-200 text-sm tracking-widest uppercase font-sans hover:bg-cream-100/10 transition-colors duration-300 text-center"
+          >
+            Všetky služby
+          </Link>
         </div>
       </section>
     </>

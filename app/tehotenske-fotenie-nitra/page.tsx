@@ -85,6 +85,7 @@ export default function TehotenskeFotenieNitraPage() {
         eyebrow="Tehotenské fotenie Nitra"
         title="Krása materstva v nadčasových fotkách"
         description="Tehotenské fotenie s citlivým vedením, jemným stylingom a prirodzenou atmosférou v Nitre a okolí."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Tehotenské fotenie Nitra" }]}
       />
 
       <section className="py-16 md:py-20">

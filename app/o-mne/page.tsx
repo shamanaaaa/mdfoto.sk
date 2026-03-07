@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function AboutPage() {
         eyebrow="O mne"
         title="Majka Domanová"
         description="Vitajte na mojej stránke. Som mamou 3 úžasných synov a milujem svoju prácu fotografky."
+        breadcrumbs={[{ label: "Domov", href: "/" }, { label: "O mne" }]}
       />
 
       <section className="py-16 md:py-24">
@@ -51,6 +53,14 @@ export default function AboutPage() {
               &bdquo;Fotografia je nádherným darom, ktorý nadobúda na hodnote
               časom… Pretože čas môžeme zastaviť len vďaka fotografiám.&ldquo;
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href="/kontakt" className="btn-primary text-center">
+                Rezervovať termín fotenia
+              </Link>
+              <Link href="/fotograf-nitra" className="btn-outline text-center">
+                Moje služby
+              </Link>
+            </div>
           </article>
         </div>
       </section>
