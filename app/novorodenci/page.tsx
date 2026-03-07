@@ -93,7 +93,7 @@ const gallerySchema = {
   url: "https://mdfoto.sk/novorodenci",
   author: { "@id": "https://mdfoto.sk/#majka" },
   publisher: { "@id": "https://mdfoto.sk/#business" },
-  image: images.slice(0, 6).map((img, i) => ({
+  image: images.slice(0, 6).map((img) => ({
     "@type": "ImageObject",
     contentUrl: `https://mdfoto.sk${img.src}`,
     name: img.alt,
