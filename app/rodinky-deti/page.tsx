@@ -94,10 +94,28 @@ const existingImages: GalleryImage[] = Array.from({ length: 22 }, (_, i) => ({
 
 const images: GalleryImage[] = [...newImages, ...existingImages];
 
+const gallerySchema = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  name: "Rodinné a detské fotenie – galéria MDFOTO Nitra",
+  description: "Galéria rodinného a detského fotenia od fotografky Majky Domanovovej v ateliéri v Cabaj-Čápore pri Nitre.",
+  url: "https://mdfoto.sk/rodinky-deti",
+  author: { "@id": "https://mdfoto.sk/#majka" },
+  publisher: { "@id": "https://mdfoto.sk/#business" },
+  image: images.slice(0, 6).map((img) => ({
+    "@type": "ImageObject",
+    contentUrl: `https://mdfoto.sk${img.src}`,
+    name: img.alt,
+    description: img.alt,
+    author: { "@id": "https://mdfoto.sk/#majka" },
+  })),
+};
+
 export default function RodinkyDetiPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
+      <JsonLd data={gallerySchema} />
 
       <PageHeader
         eyebrow="Galéria"

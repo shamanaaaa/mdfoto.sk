@@ -20,7 +20,19 @@ export default function KontaktPage() {
       />
 
       <section className="py-16 md:py-20">
-        <div className="container-wide grid grid-cols-1 lg:grid-cols-5 gap-10">
+        <div className="container-wide space-y-10">
+        <div className="w-full h-64 md:h-80 overflow-hidden bg-cream-200">
+          <iframe
+            title="MDFOTO – Cabaj-Čápor na mape"
+            src="https://maps.google.com/maps?q=Cabaj-C%C3%A1por%2C+Slovakia&t=&z=13&ie=UTF8&iwloc=B&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-3">
             <ContactForm />
           </div>
@@ -51,6 +63,17 @@ export default function KontaktPage() {
                   mdfoto.sk
                 </a>
               </p>
+              <p>
+                <strong>Instagram:</strong>{" "}
+                <a
+                  href="https://www.instagram.com/fotografka_maria_domanova/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-rose-dark hover:underline"
+                >
+                  @fotografka_maria_domanova
+                </a>
+              </p>
             </div>
 
             <a
@@ -62,12 +85,38 @@ export default function KontaktPage() {
               Rýchly kontakt cez WhatsApp
             </a>
 
+            <div className="pt-4 border-t border-cream-300 space-y-3">
+              <p className="text-sm font-serif text-charcoal-800">Páčilo sa vám fotenie?</p>
+              <p className="text-xs text-charcoal-600 leading-relaxed">
+                Vaša recenzia na Google pomáha ďalším rodinám nás nájsť. Ďakujeme!
+              </p>
+              <div className="flex items-center gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://g.page/r/CdgGxIvf9A59EBM/review&format=png"
+                  alt="QR kód – zanechajte recenziu na Google"
+                  width={80}
+                  height={80}
+                  className="flex-shrink-0 border border-cream-300"
+                />
+                <a
+                  href="https://g.page/r/CdgGxIvf9A59EBM/review"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-rose-dark hover:underline leading-relaxed"
+                >
+                  Zanechať recenziu na Google →
+                </a>
+              </div>
+            </div>
+
             <p className="text-xs text-charcoal-600 leading-relaxed pt-2 border-t border-cream-300">
               Neupravené zábery slúžia len na osobné účely, to znamená do
               súkromného albumu, nie na internet. Je zakázaný akýkoľvek ďalší
               zásah do upravených aj neupravených fotiek bez súhlasu autora.
             </p>
           </aside>
+        </div>
         </div>
       </section>
     </>

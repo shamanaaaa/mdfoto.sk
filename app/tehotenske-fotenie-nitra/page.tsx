@@ -161,6 +161,31 @@ export default function TehotenskeFotenieNitraPage() {
             <strong>7 dní v týždni</strong> a prispôsobím sa vášmu voľnému času.
           </p>
 
+          <h2 className="section-subheading pt-4">Ako to prebieha?</h2>
+          <ol className="space-y-5">
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">1</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Rezervácia termínu</p>
+                <p className="text-sm mt-1">Napíšte mi v 7.–8. mesiaci tehotenstva a dohodneme ideálny termín. Poradím vám s oblečením – alebo využijete šaty a župany priamo z ateliéra.</p>
+              </div>
+            </li>
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">2</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Fotenie so štýlom</p>
+                <p className="text-sm mt-1">Fotenie trvá 1–2 hodiny. Celý čas vás jemne navádzam do póz, aby ste vyzerali prirodzene a sebavedomo. Na požiadanie je k dispozícii aj vizážistka.</p>
+              </div>
+            </li>
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">3</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Nadčasové spomienky</p>
+                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie na USB a vytlačené na fotopapieri. Výsledky sú elegantné, jemné a nadčasové – dôstojná spomienka na toto výnimočné obdobie.</p>
+              </div>
+            </li>
+          </ol>
+
           <h2 className="section-subheading pt-6">Najčastejšie otázky</h2>
           <div className="space-y-4">
             <details className="border border-cream-300 p-4">

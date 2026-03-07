@@ -74,10 +74,28 @@ const images: GalleryImage[] = Array.from({ length: 16 }, (_, i) => ({
   alt: tehulkyAlts[i],
 }));
 
+const gallerySchema = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  name: "Tehotenské fotenie – galéria MDFOTO Nitra",
+  description: "Galéria tehotenského fotenia od fotografky Majky Domanovovej v ateliéri v Cabaj-Čápore pri Nitre.",
+  url: "https://mdfoto.sk/tehulky",
+  author: { "@id": "https://mdfoto.sk/#majka" },
+  publisher: { "@id": "https://mdfoto.sk/#business" },
+  image: images.slice(0, 6).map((img) => ({
+    "@type": "ImageObject",
+    contentUrl: `https://mdfoto.sk${img.src}`,
+    name: img.alt,
+    description: img.alt,
+    author: { "@id": "https://mdfoto.sk/#majka" },
+  })),
+};
+
 export default function TehulkyPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
+      <JsonLd data={gallerySchema} />
 
       <PageHeader
         eyebrow="Galéria"

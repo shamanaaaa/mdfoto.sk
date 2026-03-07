@@ -20,6 +20,7 @@ const routes: Array<{
   { path: "/o-mne", changeFrequency: "monthly", priority: 0.7, lastModified: "2025-12-01" },
   { path: "/cennik", changeFrequency: "monthly", priority: 0.8, lastModified: "2025-12-01" },
   { path: "/kontakt", changeFrequency: "monthly", priority: 0.7, lastModified: "2025-12-01" },
+  { path: "/faq", changeFrequency: "monthly", priority: 0.7, lastModified: "2026-03-07" },
   { path: "/ochrana-sukromia", changeFrequency: "yearly", priority: 0.3, lastModified: "2025-12-01" },
 ];
 

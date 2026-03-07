@@ -202,6 +202,31 @@ export default function NovorodeneckeFotenieNitraPage() {
             </div>
           </div>
 
+          <h2 className="section-subheading pt-4">Ako to prebieha?</h2>
+          <ol className="space-y-5">
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">1</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Rezervácia termínu</p>
+                <p className="text-sm mt-1">Napíšte mi cez formulár, WhatsApp alebo telefón. Termín si dohodneme ešte počas tehotenstva, aby sme mali istotu miesta hneď po pôrode.</p>
+              </div>
+            </li>
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">2</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Fotenie v ateliéri</p>
+                <p className="text-sm mt-1">Prídete do ateliéra v Cabaj-Čápore (6 km od Nitry). Bábätko obliekam, wrapujem a polohujem ja – fotenie trvá 3–4 hodiny podľa bábätka. Kojíte, oddychujete a ja sa postarám o všetko.</p>
+              </div>
+            </li>
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">3</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Odovzdanie fotiek</p>
+                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie v digitálnej forme, vytlačené na fotopapieri a na USB. Súčasťou je aj personalizovaná kartička o bábätku.</p>
+              </div>
+            </li>
+          </ol>
+
           <h2 className="section-subheading pt-6">Najčastejšie otázky</h2>
           <div className="space-y-4">
             <details className="border border-cream-300 p-4 group">

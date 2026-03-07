@@ -193,6 +193,31 @@ export default function RodinneFotenieNitraPage() {
             <strong>7 dní v týždni</strong>.
           </p>
 
+          <h2 className="section-subheading pt-4">Ako to prebieha?</h2>
+          <ol className="space-y-5">
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">1</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Rezervácia a konzultácia</p>
+                <p className="text-sm mt-1">Napíšte mi a dohodneme si termín. Poradím vám s oblečením, výzdobou aj tým, čo si doniesť so sebou. Vopred sa dohovoríme na type fotenia – ateliér, exteriér alebo kombinácia.</p>
+              </div>
+            </li>
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">2</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Fotenie v pohode</p>
+                <p className="text-sm mt-1">Fotenie trvá 1–2 hodiny. Deti sa vždy nájdu – v ateliéri mám hračky, priestor na hru a dobrú náladu. Neponáhľam, prispôsobím sa deťom aj rodine.</p>
+              </div>
+            </li>
+            <li className="flex gap-5 items-start">
+              <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">3</span>
+              <div>
+                <p className="font-serif text-charcoal-800 text-lg">Fotky, ktoré si zarámujete</p>
+                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie digitálne, na fotopapieri aj na USB. Každý záber je spracovaný s láskou a zmyslom pre detail.</p>
+              </div>
+            </li>
+          </ol>
+
           <h2 className="section-subheading pt-6">Najčastejšie otázky</h2>
           <div className="space-y-4">
             <details className="border border-cream-300 p-4">
