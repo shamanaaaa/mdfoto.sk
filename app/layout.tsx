@@ -210,8 +210,11 @@ export const metadata: Metadata = {
     images: ["/images/rodinky-deti/mdfoto-rodinne-fotenie (23).jpg"],
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/icon.svg",
   },
   robots: {
