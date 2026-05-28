@@ -34,7 +34,7 @@ const faqSchema = {
       name: "Aké typy fotenia ponúkate?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ponúkam novorodenecké fotenie (od 100 €), rodinné a narodeninové fotenie (od 80 €) a tehotenské fotenie (od 90 €). Všetky služby zahŕňajú retušované fotografie, tlač a USB.",
+        text: "Ponúkam novorodenecké fotenie (od 100 €), rodinné a narodeninové fotenie (od 80 €) a tehotenské fotenie (od 90 €). Všetky služby zahŕňajú retušované fotografie a tlač.",
       },
     },
     {
@@ -195,7 +195,7 @@ export default function FotografNitraPage() {
                 Kompletný servis
               </p>
               <p className="text-sm">
-                Pomoc s oblečením, styling, retušované fotky, tlač aj USB.
+                Pomoc s oblečením, styling, retušované fotky a tlač.
               </p>
             </div>
             <div className="bg-cream-200 p-5 space-y-2">
@@ -235,7 +235,7 @@ export default function FotografNitraPage() {
               <p className="mt-3 text-sm">
                 Ponúkam novorodenecké fotenie (od 100 €), rodinné a narodeninové
                 fotenie (od 80 €) a tehotenské fotenie (od 90 €). Všetky služby
-                zahŕňajú retušované fotografie, tlač a USB.
+                zahŕňajú retušované fotografie a tlač.
               </p>
             </details>
             <details className="border border-cream-300 p-4">

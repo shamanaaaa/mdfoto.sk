@@ -121,11 +121,11 @@ export default function TehotenskeFotenieNitraPage() {
           <ul className="space-y-2 list-disc pl-6">
             <li>
               <strong>Balík 1 (90 €):</strong> 5 retušovaných fotiek, tlač
-              10×15 cm, USB – len v ateliéri
+              10×15 cm – len v ateliéri
             </li>
             <li>
               <strong>Balík 2 (130 €):</strong> 10 retušovaných fotiek,
-              ateliér + exteriér, USB
+              ateliér + exteriér
             </li>
             <li>
               Šaty, čipkované župany a body k tehotenskému foteniu k dispozícii
@@ -181,7 +181,7 @@ export default function TehotenskeFotenieNitraPage() {
               <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">3</span>
               <div>
                 <p className="font-serif text-charcoal-800 text-lg">Nadčasové spomienky</p>
-                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie na USB a vytlačené na fotopapieri. Výsledky sú elegantné, jemné a nadčasové – dôstojná spomienka na toto výnimočné obdobie.</p>
+                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie v digitálnej forme a vytlačené na fotopapieri. Výsledky sú elegantné, jemné a nadčasové – dôstojná spomienka na toto výnimočné obdobie.</p>
               </div>
             </li>
           </ol>

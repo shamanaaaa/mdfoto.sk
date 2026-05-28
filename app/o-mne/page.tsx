@@ -148,7 +148,7 @@ export default function AboutPage() {
             </p>
             <p>
               Každú fotografiu starostlivo retuším – výsledok dostanete v
-              digitálnej forme, vytlačený na fotopapieri aj na USB. Spracovanie
+              digitálnej forme a vytlačený na fotopapieri. Spracovanie
               trvá zvyčajne <strong>3–4 týždne</strong>. Dbám na to, aby
               každý záber bol nadčasový a dôstojný – niečo, čo si zarámujete
               a budete na ňom hrdí aj o 20 rokov.

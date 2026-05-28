@@ -121,11 +121,11 @@ export default function RodinneFotenieNitraPage() {
           <ul className="space-y-2 list-disc pl-6">
             <li>
               <strong>Balík 1 (80 €):</strong> 5 retušovaných fotiek len detí,
-              tlač 10×15 cm, USB
+              tlač 10×15 cm
             </li>
             <li>
               <strong>Balík 2 (130 €):</strong> 10 retušovaných fotiek celej
-              rodiny, ateliér aj exteriér, USB
+              rodiny, ateliér aj exteriér
             </li>
             <li>
               Šaty pre dievčatká, košele pre chlapcov, čelenky a motýliky
@@ -213,7 +213,7 @@ export default function RodinneFotenieNitraPage() {
               <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">3</span>
               <div>
                 <p className="font-serif text-charcoal-800 text-lg">Fotky, ktoré si zarámujete</p>
-                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie digitálne, na fotopapieri aj na USB. Každý záber je spracovaný s láskou a zmyslom pre detail.</p>
+                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie digitálne a na fotopapieri. Každý záber je spracovaný s láskou a zmyslom pre detail.</p>
               </div>
             </li>
           </ol>

@@ -33,7 +33,7 @@ const faqSchema = {
       name: "Aké typy fotenia ponúkate?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ponúkam novorodenecké fotenie (od 100 €), rodinné a narodeninové fotenie (od 80 €), tehotenské fotenie (od 90 €) a portrétne fotenie. Všetky služby zahŕňajú retušované fotografie, tlač a USB.",
+        text: "Ponúkam novorodenecké fotenie (od 100 €), rodinné a narodeninové fotenie (od 80 €), tehotenské fotenie (od 90 €) a portrétne fotenie. Všetky služby zahŕňajú retušované fotografie a tlač.",
       },
     },
     {
@@ -89,7 +89,7 @@ const faqSchema = {
       name: "Ako dlho trvá spracovanie fotografií?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Retušované fotografie dostanete do 3–4 týždňov po fotení. Súčasťou odovzdania je digitálna verzia, tlač na fotopapieri a USB disk.",
+        text: "Retušované fotografie dostanete do 3–4 týždňov po fotení. Súčasťou odovzdania je digitálna verzia a tlač na fotopapieri.",
       },
     },
     {
@@ -190,7 +190,7 @@ const sections = [
     questions: [
       {
         q: "Ako dlho trvá spracovanie fotografií?",
-        a: "3–4 týždne po fotení. Dostanete retušované fotografie digitálne, vytlačené na fotopapieri aj na USB.",
+        a: "3–4 týždne po fotení. Dostanete retušované fotografie digitálne a vytlačené na fotopapieri.",
       },
       {
         q: "Môžem si fotky zverejniť na sociálnych sieťach?",

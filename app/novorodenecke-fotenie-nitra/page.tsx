@@ -42,7 +42,7 @@ const faqSchema = {
       name: "Koľko stojí novorodenecké fotenie v Nitre?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cena novorodeneckého fotenia je od 100 € (Balík 1 – 5 retušovaných fotiek, len bábätko) do 150 € (Balík 2 – 10 retušovaných fotiek s rodinou). Tlač, USB a kartička o bábätku sú súčasťou ceny.",
+        text: "Cena novorodeneckého fotenia je od 100 € (Balík 1 – 5 retušovaných fotiek, len bábätko) do 150 € (Balík 2 – 10 retušovaných fotiek s rodinou). Tlač a kartička o bábätku sú súčasťou ceny.",
       },
     },
     {
@@ -130,11 +130,11 @@ export default function NovorodeneckeFotenieNitraPage() {
           <ul className="space-y-2 list-disc pl-6">
             <li>
               <strong>Balík 1 (100 €):</strong> 5 retušovaných fotiek len
-              bábätka, tlač 10×15 cm, USB, kartička o bábätku
+              bábätka, tlač 10×15 cm, kartička o bábätku
             </li>
             <li>
               <strong>Balík 2 (150 €):</strong> 10 retušovaných fotiek
-              s rodičmi a súrodencami, 2–3 hodiny fotenia, USB a kartička
+              s rodičmi a súrodencami, 2–3 hodiny fotenia, kartička
             </li>
             <li>
               Oblečenie, čelenky, čiapočky, deky a doplnky – všetko mám
@@ -222,7 +222,7 @@ export default function NovorodeneckeFotenieNitraPage() {
               <span className="flex-shrink-0 w-9 h-9 rounded-full bg-rose-muted text-white font-serif text-lg flex items-center justify-center">3</span>
               <div>
                 <p className="font-serif text-charcoal-800 text-lg">Odovzdanie fotiek</p>
-                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie v digitálnej forme, vytlačené na fotopapieri a na USB. Súčasťou je aj personalizovaná kartička o bábätku.</p>
+                <p className="text-sm mt-1">Do 3–4 týždňov dostanete retušované fotografie v digitálnej forme a vytlačené na fotopapieri. Súčasťou je aj personalizovaná kartička o bábätku.</p>
               </div>
             </li>
           </ol>
@@ -255,7 +255,7 @@ export default function NovorodeneckeFotenieNitraPage() {
               </summary>
               <p className="mt-3 text-sm">
                 Od 100 € (Balík 1 – 5 retušovaných fotiek, len bábätko) do
-                150 € (Balík 2 – 10 retušovaných fotiek s rodinou). Tlač, USB
+                150 € (Balík 2 – 10 retušovaných fotiek s rodinou). Tlač
                 a kartička o bábätku sú v cene.{" "}
                 <Link
                   href="/cennik"

@@ -49,7 +49,7 @@ const features = [
   {
     icon: Camera,
     title: "Profesionálny výsledok",
-    desc: "Retušované fotografie, tlač a USB so zábermi – všetko pre váš dokonalý spomínkový album.",
+    desc: "Retušované fotografie a tlač – všetko pre váš dokonalý spomínkový album.",
   },
   {
     icon: Clock,
