@@ -212,10 +212,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon-96.png", type: "image/png", sizes: "96x96" },
       { url: "/icon.svg", type: "image/svg+xml" },
     ],
     shortcut: "/favicon.ico",
-    apple: "/icon.svg",
+    apple: "/apple-touch-icon.png",
   },
   robots: {
     index: true,

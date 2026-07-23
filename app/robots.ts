@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/rezervacia-potvrdenie", "/icon.svg", "/favicon.ico"],
+        disallow: ["/rezervacia-potvrdenie"],
       },
     ],
     sitemap: "https://mdfoto.sk/sitemap.xml",
