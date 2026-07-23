@@ -118,7 +118,8 @@ export default function Footer() {
             </ul>
 
             <div className="pt-4 border-t border-charcoal-700 space-y-1 text-xs text-charcoal-400">
-              <p>DOMAN s.r.o. | IČO: 47912383</p>
+              <p>MDFOTO – Majka Domanová</p>
+              <p>Prevádzkovateľ: DOMAN s.r.o. | IČO: 47912383</p>
               <p>Cabaj-Čápor (6 km od Nitry)</p>
             </div>
           </div>
