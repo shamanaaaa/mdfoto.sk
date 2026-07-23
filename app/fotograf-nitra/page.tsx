@@ -3,18 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
+import { og } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Fotograf Nitra",
   description:
     "Fotograf Nitra – Majka Domanová, 12+ rokov skúseností. Rodinné, novorodenecké a tehotenské fotenie v Nitre a okolí do 100 km. Rezervujte si termín.",
   alternates: { canonical: "/fotograf-nitra" },
-  openGraph: {
+  openGraph: og({
     title: "Fotograf Nitra | MDFOTO – Majka Domanová",
     description:
       "Profesionálne fotenie v Nitre a okolí. Rodiny, novorodenci, tehuľky. 12+ rokov skúseností, 7 dní v týždni.",
     url: "/fotograf-nitra",
-  },
+  }),
 };
 
 const faqSchema = {

@@ -3,6 +3,7 @@ import Gallery, { type GalleryImage } from "@/components/Gallery";
 import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
+import { og } from "@/lib/seo";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -44,10 +45,18 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Novorodenecké fotenie",
+  title: "Novorodenecké fotenie – galéria",
   description:
     "Novorodenecké fotenie v ateliéri v Cabaj-Čápore (6 km od Nitry). Bezpečné, profesionálne a plné lásky. Oblečenie a doplnky k dispozícii. Od 100 €.",
   alternates: { canonical: "/novorodenci" },
+  openGraph: og({
+    title: "Novorodenecké fotenie – galéria | MDFOTO",
+    description:
+      "Galéria novorodeneckého fotenia v ateliéri pri Nitre. Bezpečné, profesionálne a plné lásky.",
+    url: "/novorodenci",
+    image: "/images/novorodenci/mdfoto-novorodenecke-fotenie (1).jpg",
+    imageAlt: "Novorodenecké fotenie Nitra – galéria MDFOTO",
+  }),
 };
 
 const novorodenciAlts = [

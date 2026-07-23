@@ -3,18 +3,22 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
+import Gallery, { type GalleryImage } from "@/components/Gallery";
+import { og } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Tehotenské fotenie Nitra",
   description:
     "Tehotenské fotenie Nitra – elegantné portréty budúcich mamičiek v ateliéri aj exteriéri. Šaty a doplnky k dispozícii, od 90 €. Rezervujte si termín.",
   alternates: { canonical: "/tehotenske-fotenie-nitra" },
-  openGraph: {
+  openGraph: og({
     title: "Tehotenské fotenie Nitra | MDFOTO",
     description:
       "Nadčasové tehotenské fotenie v Nitre. Šaty, čipkované župany a doplnky k dispozícii. Od 90 €.",
     url: "/tehotenske-fotenie-nitra",
-  },
+    image: "/images/tehulky/mdfoto-tehotenske-fotenie (1).jpg",
+    imageAlt: "Tehotenské fotenie Nitra – MDFOTO",
+  }),
 };
 
 const faqSchema = {
@@ -75,6 +79,17 @@ const breadcrumbSchema = {
   ],
 };
 
+const galleryImages: GalleryImage[] = [
+  { src: "/images/tehulky/mdfoto-tehotenske-fotenie (1).jpg", alt: "Tehotná mamička v dlhých šatách – tehotenské fotenie Nitra MDFOTO" },
+  { src: "/images/tehulky/mdfoto-tehotenske-fotenie (2).jpg", alt: "Budúca mamička s bruškom – tehotenské fotenie ateliér Cabaj-Čápor" },
+  { src: "/images/tehulky/mdfoto-tehotenske-fotenie (3).jpg", alt: "Tehotná žena v čipkovanom župane – elegantné tehotenské fotenie Nitra" },
+  { src: "/images/tehulky/mdfoto-tehotenske-fotenie (4).jpg", alt: "Mamička v exteriéri – tehotenské fotenie príroda Nitra MDFOTO" },
+  { src: "/images/tehulky/mdfoto-tehotenske-fotenie (5).jpg", alt: "Tehotná mamička s partnerom – párové tehotenské fotenie Nitra" },
+  { src: "/images/tehulky/mdfoto-tehotenske-fotenie (6).jpg", alt: "Bruško v detailnom zábere – tehotenské fotenie ateliér MDFOTO" },
+  { src: "/images/tehulky/mdfoto-tehotenske-fotenie (7).jpg", alt: "Budúca mamička v bielych šatách – nadčasové tehotenské fotenie Nitra" },
+  { src: "/images/tehulky/mdfoto-tehotenske-fotenie (8).jpg", alt: "Tehotná žena s dieťaťom – rodinné tehotenské fotenie Nitra" },
+];
+
 export default function TehotenskeFotenieNitraPage() {
   return (
     <>
@@ -82,8 +97,8 @@ export default function TehotenskeFotenieNitraPage() {
       <JsonLd data={breadcrumbSchema} />
 
       <PageHeader
-        eyebrow="Tehotenské fotenie Nitra"
-        title="Krása materstva v nadčasových fotkách"
+        eyebrow="Krása materstva"
+        title="Tehotenské fotenie Nitra – nadčasové portréty"
         description="Tehotenské fotenie s citlivým vedením, jemným stylingom a prirodzenou atmosférou v Nitre a okolí."
         breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Tehotenské fotenie Nitra" }]}
       />
@@ -146,6 +161,16 @@ export default function TehotenskeFotenieNitraPage() {
             týždňom tehotenstva</strong>. V tomto období je bruško krásne
             viditeľné a mamička sa ešte cíti pohodlne. Odporúčam si termín
             dohodnúť minimálne 2–3 týždne vopred.
+          </p>
+
+          <h2 className="section-subheading pt-4">
+            Ukážky z tehotenských fotení
+          </h2>
+          <Gallery images={galleryImages} columns={4} />
+          <p className="text-sm text-center">
+            <Link href="/tehulky" className="text-rose-dark hover:underline">
+              Pozrieť celú galériu tehotenského fotenia →
+            </Link>
           </p>
 
           <h2 className="section-subheading pt-4">

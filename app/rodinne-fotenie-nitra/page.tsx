@@ -3,18 +3,22 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
+import Gallery, { type GalleryImage } from "@/components/Gallery";
+import { og } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Rodinné fotenie Nitra",
   description:
     "Rodinné fotenie Nitra – hravé a prirodzené fotenie rodín, detí a narodeninové fotenie v ateliéri alebo exteriéri. Od 80 €. Rezervujte si termín.",
   alternates: { canonical: "/rodinne-fotenie-nitra" },
-  openGraph: {
+  openGraph: og({
     title: "Rodinné fotenie Nitra | MDFOTO",
     description:
       "Hravé rodinné fotenie bez stresu v Nitre a okolí. Pomoc s prípravou, oblečením aj priebehom. Od 80 €.",
     url: "/rodinne-fotenie-nitra",
-  },
+    image: "/images/rodinky-deti/mdfoto-rodinne-fotenie (23).jpg",
+    imageAlt: "Rodinné fotenie Nitra – MDFOTO",
+  }),
 };
 
 const faqSchema = {
@@ -75,6 +79,17 @@ const breadcrumbSchema = {
   ],
 };
 
+const galleryImages: GalleryImage[] = [
+  { src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (23).jpg", alt: "Rodina s deťmi v ateliéri – rodinné fotenie Nitra MDFOTO" },
+  { src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (24).jpg", alt: "Rodičia a deti v exteriéri – rodinné fotenie Nitra Majka Domanová" },
+  { src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (25).jpg", alt: "Rodinný portrét v ateliéri – rodinné fotenie MDFOTO Cabaj-Čápor" },
+  { src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (26).jpg", alt: "Mama s deťmi – hravé rodinné fotenie Nitra MDFOTO" },
+  { src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (1).jpg", alt: "Rodičia s bábätkom – rodinné novorodenecké fotenie Nitra MDFOTO" },
+  { src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (2).jpg", alt: "Deti sa smejú – hravé detské fotenie ateliér Nitra" },
+  { src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (3).jpg", alt: "Rodinný portrét – rodinné fotenie Cabaj-Čápor MDFOTO" },
+  { src: "/images/rodinky-deti/mdfoto-rodinne-fotenie (4).jpg", alt: "Narodeninové fotenie s balónmi – detské fotenie Nitra" },
+];
+
 export default function RodinneFotenieNitraPage() {
   return (
     <>
@@ -82,8 +97,8 @@ export default function RodinneFotenieNitraPage() {
       <JsonLd data={breadcrumbSchema} />
 
       <PageHeader
-        eyebrow="Rodinné fotenie Nitra"
-        title="Rodinné fotenie plné emócií"
+        eyebrow="Hravé a prirodzené"
+        title="Rodinné fotenie Nitra plné emócií"
         description="Zachytím momenty smiechu, blízkosti a prirodzenej radosti vašej rodiny – v ateliéri pri Nitre alebo v exteriéri."
         breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Rodinné fotenie Nitra" }]}
       />
@@ -179,6 +194,16 @@ export default function RodinneFotenieNitraPage() {
               </p>
             </div>
           </div>
+
+          <h2 className="section-subheading pt-4">
+            Ukážky z rodinných fotení
+          </h2>
+          <Gallery images={galleryImages} columns={4} />
+          <p className="text-sm text-center">
+            <Link href="/rodinky-deti" className="text-rose-dark hover:underline">
+              Pozrieť celú galériu rodinného fotenia →
+            </Link>
+          </p>
 
           <h2 className="section-subheading pt-4">
             Pre koho je fotenie určené?

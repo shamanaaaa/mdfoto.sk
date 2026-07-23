@@ -11,7 +11,8 @@ const localBusinessSchema = {
   "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://mdfoto.sk/#business",
   name: "MDFOTO – Majka Domanová",
-  alternateName: "MDFOTO",
+  alternateName: ["MDFOTO", "DOMAN s.r.o."],
+  legalName: "DOMAN s.r.o.",
   url: "https://mdfoto.sk",
   logo: {
     "@type": "ImageObject",
@@ -24,6 +25,11 @@ const localBusinessSchema = {
     "Profesionálne rodinné fotenie, novorodenecké fotenie a tehotenské fotenie v Nitre a okolí. 12+ rokov skúseností, ateliér v Cabaj-Čápore.",
   telephone: "+421948505587",
   email: "mdfoto.sk@gmail.com",
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "IČO",
+    value: "47912383",
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Cabaj-Čápor",
@@ -102,7 +108,7 @@ const localBusinessSchema = {
           name: "Novorodenecké fotenie",
           description:
             "Profesionálne fotenie novorodencov v bezpečnom, vykúrenom ateliéri. Oblečenie, čelenky a doplnky k dispozícii.",
-          url: "https://mdfoto.sk/novorodenci",
+          url: "https://mdfoto.sk/novorodenecke-fotenie-nitra",
         },
         priceSpecification: {
           "@type": "PriceSpecification",
@@ -118,7 +124,7 @@ const localBusinessSchema = {
           name: "Rodinné a detské fotenie",
           description:
             "Hravé rodinné a narodeninové fotenie v ateliéri alebo exteriéri. Šaty, doplnky a výzdoba k dispozícii.",
-          url: "https://mdfoto.sk/rodinky-deti",
+          url: "https://mdfoto.sk/rodinne-fotenie-nitra",
         },
         priceSpecification: {
           "@type": "PriceSpecification",
@@ -134,7 +140,7 @@ const localBusinessSchema = {
           name: "Tehotenské fotenie",
           description:
             "Elegantné tehotenské fotenie v ateliéri aj exteriéri. Šaty, čipkované župany a doplnky k dispozícii.",
-          url: "https://mdfoto.sk/tehulky",
+          url: "https://mdfoto.sk/tehotenske-fotenie-nitra",
         },
         priceSpecification: {
           "@type": "PriceSpecification",

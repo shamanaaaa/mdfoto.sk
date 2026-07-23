@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
+import { og } from "@/lib/seo";
 
 const cennikSchema = {
   "@context": "https://schema.org",
@@ -113,6 +114,12 @@ export const metadata: Metadata = {
   description:
     "Cenník fotenia v Nitre – novorodenecké od 100 €, rodinné od 80 €, tehotenské od 90 €. Balíky, doplatky a dôležité informácie. MDFOTO.",
   alternates: { canonical: "/cennik" },
+  openGraph: og({
+    title: "Cenník fotenia | MDFOTO",
+    description:
+      "Cenník fotenia v Nitre – novorodenecké od 100 €, rodinné od 80 €, tehotenské od 90 €.",
+    url: "/cennik",
+  }),
 };
 
 type Package = {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
+import { og } from "@/lib/seo";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -47,12 +48,12 @@ export const metadata: Metadata = {
   description:
     "Portrétny fotograf Nitra – prirodzené portréty žien, mužov, párov aj rodín v ateliéri alebo exteriéri. Jemné vedenie a profesionálny výsledok.",
   alternates: { canonical: "/portretovy-fotograf-nitra" },
-  openGraph: {
+  openGraph: og({
     title: "Portrétny fotograf Nitra | MDFOTO",
     description:
       "Nadčasové portrétne fotenie v Nitre a okolí. Prirodzený výraz, jemné vedenie, profesionálny výsledok.",
     url: "/portretovy-fotograf-nitra",
-  },
+  }),
 };
 
 const breadcrumbSchema = {
@@ -81,8 +82,8 @@ export default function PortretnyFotografNitraPage() {
       <JsonLd data={breadcrumbSchema} />
 
       <PageHeader
-        eyebrow="Portrétny fotograf Nitra"
-        title="Portréty, ktoré vás vystihnú"
+        eyebrow="Osobné aj rodinné portréty"
+        title="Portrétny fotograf Nitra – portréty, ktoré vás vystihnú"
         description="Prirodzené portrétne fotenie bez stresu – vhodné pre osobný branding, párové aj rodinné portréty."
         breadcrumbs={[{ label: "Domov", href: "/" }, { label: "Portrétny fotograf Nitra" }]}
       />

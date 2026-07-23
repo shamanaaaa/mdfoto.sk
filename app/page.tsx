@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight, Heart, Camera, Clock } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
 import Testimonials from "@/components/Testimonials";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const homepageSchema = {
   "@context": "https://schema.org",
@@ -58,47 +63,10 @@ const features = [
   },
 ];
 
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://mdfoto.sk/#business",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    reviewCount: "3",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  review: [
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Zuzana K." },
-      reviewRating: { "@type": "Rating", ratingValue: "5" },
-      reviewBody:
-        "Majka je úžasná fotografka. Naše bábätko bolo v jej rukách v bezpečí a fotografie sú nádherné. Odporúčam každej mamičke!",
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Petra M." },
-      reviewRating: { "@type": "Rating", ratingValue: "5" },
-      reviewBody:
-        "Fotenie prebehlo v úplnej pohode, deti sa bavili a výsledok prekonali naše očakávania. Určite sa vrátime!",
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Lucia V." },
-      reviewRating: { "@type": "Rating", ratingValue: "5" },
-      reviewBody:
-        "Krásna atmosféra, profesionálny prístup a nádherné fotky. Majka ma celý čas viedla tak, že som sa cítila prirodzene a sebavedomo.",
-    },
-  ],
-};
-
 export default function HomePage() {
   return (
     <>
       <JsonLd data={homepageSchema} />
-      <JsonLd data={reviewSchema} />
 
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="relative h-screen min-h-[600px] flex items-end pb-20 md:pb-28 overflow-hidden">

@@ -3,18 +3,21 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
+import { og } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Novorodenecké fotenie Nitra",
   description:
     "Novorodenecké fotenie Nitra – bezpečné fotenie bábätiek v útulnom ateliéri pri Nitre. 12+ rokov skúseností, oblečenie a doplnky k dispozícii. Od 100 €.",
   alternates: { canonical: "/novorodenecke-fotenie-nitra" },
-  openGraph: {
+  openGraph: og({
     title: "Novorodenecké fotenie Nitra | MDFOTO",
     description:
       "Profesionálne fotenie novorodencov v Nitre a okolí. Bezpečný, vykúrený ateliér, skúsené ruky a krásne výsledky.",
     url: "/novorodenecke-fotenie-nitra",
-  },
+    image: "/images/novorodenci/mdfoto-novorodenecke-fotenie (1).jpg",
+    imageAlt: "Novorodenecké fotenie Nitra – MDFOTO",
+  }),
 };
 
 const faqSchema = {

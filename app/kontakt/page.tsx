@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
+import { og } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
     "Kontaktujte MDFOTO a rezervujte si termín fotenia v Nitre. Formulár, WhatsApp alebo telefón 0948 505 587. 7 dní v týždni.",
   alternates: { canonical: "/kontakt" },
+  openGraph: og({
+    title: "Kontakt | MDFOTO",
+    description:
+      "Rezervujte si termín fotenia v Nitre – formulár, WhatsApp alebo telefón 0948 505 587. 7 dní v týždni.",
+    url: "/kontakt",
+  }),
 };
 
 export default function KontaktPage() {

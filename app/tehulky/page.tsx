@@ -3,6 +3,7 @@ import Gallery, { type GalleryImage } from "@/components/Gallery";
 import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
+import { og } from "@/lib/seo";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -44,10 +45,18 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Tehotenské fotenie",
+  title: "Tehotenské fotenie – galéria",
   description:
     "Tehotenské fotenie v Nitre – krása materstva zachytená v nadčasových fotografiách. Šaty a doplnky k dispozícii, ateliér aj exteriér. Od 90 €.",
   alternates: { canonical: "/tehulky" },
+  openGraph: og({
+    title: "Tehotenské fotenie – galéria | MDFOTO",
+    description:
+      "Galéria tehotenského fotenia v Nitre a okolí. Šaty a doplnky k dispozícii, ateliér aj exteriér.",
+    url: "/tehulky",
+    image: "/images/tehulky/mdfoto-tehotenske-fotenie (1).jpg",
+    imageAlt: "Tehotenské fotenie Nitra – galéria MDFOTO",
+  }),
 };
 
 const tehulkyAlts = [

@@ -3,6 +3,7 @@ import Gallery, { type GalleryImage } from "@/components/Gallery";
 import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
+import { og } from "@/lib/seo";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -44,10 +45,18 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Rodinné a detské fotenie",
+  title: "Rodinné a detské fotenie – galéria",
   description:
     "Rodinné a detské fotenie v Nitre – hravé, prirodzené a plné emócií. Ateliér aj exteriér, šaty a doplnky k dispozícii. Od 80 €.",
   alternates: { canonical: "/rodinky-deti" },
+  openGraph: og({
+    title: "Rodinné a detské fotenie – galéria | MDFOTO",
+    description:
+      "Galéria rodinného a detského fotenia v Nitre a okolí. Hravé, prirodzené a plné emócií.",
+    url: "/rodinky-deti",
+    image: "/images/rodinky-deti/mdfoto-rodinne-fotenie (23).jpg",
+    imageAlt: "Rodinné fotenie Nitra – galéria MDFOTO",
+  }),
 };
 
 const rodinkyAlts: Record<number, string> = {
