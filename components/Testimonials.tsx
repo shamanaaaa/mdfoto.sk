@@ -1,20 +1,14 @@
+import { GOOGLE_REVIEW_URL, GOOGLE_PROFILE_URL } from "@/lib/seo";
+
 const testimonials = [
   {
-    name: "Zuzana K.",
-    service: "Novorodenecké fotenie",
-    text: "Majka je úžasná fotografka. Naše bábätko bolo v jej rukách v bezpečí a fotografie sú nádherné. Odporúčam každej mamičke!",
+    name: "Katarína D.",
+    text: "Najlepšia fotografka, najkrajšie fotky, najkrajší ateliér.",
     rating: 5,
   },
   {
-    name: "Petra M.",
-    service: "Rodinné fotenie",
-    text: "Fotenie prebehlo v úplnej pohode, deti sa bavili a výsledok prekonali naše očakávania. Určite sa vrátime!",
-    rating: 5,
-  },
-  {
-    name: "Lucia V.",
-    service: "Tehotenské fotenie",
-    text: "Krásna atmosféra, profesionálny prístup a nádherné fotky. Majka ma celý čas viedla tak, že som sa cítila prirodzene a sebavedomo.",
+    name: "Tomáš V.",
+    text: "Príjemné prostredie na fotenie.",
     rating: 5,
   },
 ];
@@ -26,9 +20,19 @@ export default function Testimonials() {
         <div className="text-center mb-14">
           <p className="section-label mb-3">Referencie</p>
           <h2 className="section-heading">Čo hovoria klientky</h2>
+          <a
+            href={GOOGLE_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-charcoal-600 hover:text-charcoal-800 transition-colors"
+          >
+            <span className="text-rose-dark text-lg tracking-tight">★★★★★</span>
+            <span className="font-medium">5,0</span>
+            <span>hodnotenie na Google</span>
+          </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {testimonials.map((t) => (
             <article
               key={t.name}
@@ -40,12 +44,31 @@ export default function Testimonials() {
               <blockquote className="text-charcoal-700 leading-relaxed text-sm flex-1">
                 &bdquo;{t.text}&ldquo;
               </blockquote>
-              <footer className="pt-2 border-t border-cream-200">
+              <footer className="pt-2 border-t border-cream-200 flex items-center justify-between">
                 <p className="font-serif text-charcoal-800">{t.name}</p>
-                <p className="text-xs text-charcoal-500 tracking-wide mt-0.5">{t.service}</p>
+                <span className="text-xs text-charcoal-400 tracking-wide">Google</span>
               </footer>
             </article>
           ))}
+        </div>
+
+        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={GOOGLE_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline text-center"
+          >
+            Prečítať všetky recenzie
+          </a>
+          <a
+            href={GOOGLE_REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-center"
+          >
+            Napíšte nám recenziu
+          </a>
         </div>
       </div>
     </section>

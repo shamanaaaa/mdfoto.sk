@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 
+/** Opens the Google review box directly (from the Business Profile). */
+export const GOOGLE_REVIEW_URL = "https://g.page/r/CdgGxIvf9A59EBM/review";
+/** Google Maps profile (by CID) – lands on the listing with reviews. */
+export const GOOGLE_PROFILE_URL =
+  "https://www.google.com/maps?cid=9011409145374705368";
+
 interface OgInput {
   title: string;
   description: string;

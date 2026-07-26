@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, Facebook } from "lucide-react";
+import { Phone, Mail, Facebook, Star } from "lucide-react";
+import { GOOGLE_PROFILE_URL } from "@/lib/seo";
 
 const footerLinks = [
   { href: "/novorodenci", label: "Novorodenci" },
@@ -113,6 +114,17 @@ export default function Footer() {
                 >
                   <Mail size={15} />
                   mdfoto.sk@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href={GOOGLE_PROFILE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 hover:text-cream-100 transition-colors"
+                >
+                  <Star size={15} />
+                  Recenzie na Google (5,0)
                 </a>
               </li>
             </ul>

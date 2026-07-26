@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
-import { og } from "@/lib/seo";
+import { og, GOOGLE_REVIEW_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -30,8 +30,8 @@ export default function KontaktPage() {
         <div className="container-wide space-y-10">
         <div className="w-full h-64 md:h-80 overflow-hidden bg-cream-200">
           <iframe
-            title="MDFOTO – Cabaj-Čápor na mape"
-            src="https://maps.google.com/maps?q=Cabaj-C%C3%A1por%2C+Slovakia&t=&z=13&ie=UTF8&iwloc=B&output=embed"
+            title="MDFOTO – Majka Domanová na mape"
+            src="https://maps.google.com/maps?q=MDFOTO+Majka+Domanov%C3%A1+Cabaj-%C4%8C%C3%A1por&z=14&ie=UTF8&iwloc=B&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -100,14 +100,14 @@ export default function KontaktPage() {
               <div className="flex items-center gap-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://g.page/r/CdgGxIvf9A59EBM/review&format=png"
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent(GOOGLE_REVIEW_URL)}&format=png`}
                   alt="QR kód – zanechajte recenziu na Google"
                   width={80}
                   height={80}
                   className="flex-shrink-0 border border-cream-300"
                 />
                 <a
-                  href="https://g.page/r/CdgGxIvf9A59EBM/review"
+                  href={GOOGLE_REVIEW_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-rose-dark hover:underline leading-relaxed"
