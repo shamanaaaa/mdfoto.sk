@@ -33,16 +33,17 @@ export default function Testimonials() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        {/* Columns, not a grid – review lengths vary too much for equal-height cards. */}
+        <div className="columns-1 sm:columns-2 gap-8 max-w-5xl mx-auto">
           {GOOGLE_REVIEWS.map((t) => (
             <article
               key={t.name}
-              className="bg-white border border-cream-300 p-8 space-y-4 flex flex-col"
+              className="bg-white border border-cream-300 p-8 space-y-4 mb-8 break-inside-avoid"
             >
               <div className="flex gap-0.5 text-rose-dark text-lg" aria-label={`Hodnotenie ${t.rating} z 5`}>
                 {"★".repeat(t.rating)}
               </div>
-              <blockquote className="text-charcoal-700 leading-relaxed text-sm flex-1">
+              <blockquote className="text-charcoal-700 leading-relaxed text-sm">
                 &bdquo;{t.text}&ldquo;
               </blockquote>
               <footer className="pt-2 border-t border-cream-200 flex items-center justify-between">

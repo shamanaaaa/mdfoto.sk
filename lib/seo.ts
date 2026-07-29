@@ -22,12 +22,21 @@ export interface GoogleReview {
  */
 export const GOOGLE_REVIEWS: GoogleReview[] = [
   {
+    name: "Katarína K.",
+    text: "Majku som našla náhodne na internete, keď som hľadala niekoho v NR a okolí na tehotenské fotenie. Veľmi sa mi páčila jej stránka a jej foto. Komunikácia s ňou bola od začiatku veľmi fajn. Ja som človek, ktorý sa nerád fotí, takže som sa toho celkom obávala, ale musím povedať, že to bolo super, užila som si to, na fotení bola veľmi dobrá nálada a tehotenské fotky mám nádherné. Hneď sme sa dohodli aj na novorodeneckom fotení, to sme mali 8 dní po pôrode a výsledok je tiež úžasný. Ateliér bol pripravený, vykúrený, Majka s malou veľmi opatrne zaobchádzala, naozaj nemám čo vytknúť. Majka je už taká naša fotografka, absolvovali sme u nej tiež už 2x vianočné fotenie, kde ten ateliér je vždy úžasný, tiež fotenie k 1. narodeninám našej dcéry. Ja som naozaj veľmi spokojná s jej prístupom, atmosférou na fotení, vždy sa veľa nasmejeme a pri tom vzniknú krásne fotky. Môžem iba odporúčať, určite budete aj vy spokojní.",
+    rating: 5,
+  },
+  {
+    name: "Katarína B.",
+    text: "Majku Domanovú môžem len vrelo odporučiť. Je to úžasná fotografka s veľkým citom pre zachytenie emócií, radosti a neopakovateľných okamihov. Jej fotografie nie sú len krásne na pohľad, ale dokážu vo mne aj po rokoch vyvolať spomienky, úsmev a hrejivý pocit. Počas fotenia vytvára príjemnú, uvoľnenú a pozitívnu atmosféru, vďaka ktorej vznikajú prirodzené a autentické zábery. Majuška, ďakujem za nádherné spomienky, ktoré budú mať pre nás hodnotu aj o mnoho rokov. Baškovci",
+    rating: 5,
+  },
+  {
     name: "Denisa K.",
     text: "Najlepšia fotografka! Radi sa k nej vraciame. Vždy spĺňa všetky naše požiadavky, ktoré nie sú jednoduché a fotky sú vždy lepšie ako máme v predstavách my. Jednoznačne odporúčam.",
     rating: 5,
   },
   {
-    // Opening sentence only – the listing truncates the rest behind "More".
     name: "Martin K.",
     text: "S fotografovaním sme vždy spokojní, deti sú uvoľnené, prostredie príjemné, fotografka úžasná.",
     rating: 5,
