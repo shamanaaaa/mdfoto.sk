@@ -5,6 +5,11 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
+import {
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
+  GOOGLE_REVIEWS,
+} from "@/lib/seo";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -72,6 +77,25 @@ const localBusinessSchema = {
   priceRange: "80€–150€",
   currenciesAccepted: "EUR",
   paymentAccepted: "Cash, Bank Transfer",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: GOOGLE_RATING,
+    reviewCount: GOOGLE_REVIEW_COUNT,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  review: GOOGLE_REVIEWS.map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.name },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: r.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody: r.text,
+    publisher: { "@type": "Organization", name: "Google" },
+  })),
   sameAs: [
     "https://www.facebook.com/mdfoto.sk",
     "https://www.instagram.com/fotografka_maria_domanova/",

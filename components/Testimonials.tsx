@@ -1,17 +1,18 @@
-import { GOOGLE_REVIEW_URL, GOOGLE_PROFILE_URL } from "@/lib/seo";
+import {
+  GOOGLE_REVIEW_URL,
+  GOOGLE_PROFILE_URL,
+  GOOGLE_REVIEWS,
+  GOOGLE_REVIEW_COUNT,
+  googleRatingLabel,
+} from "@/lib/seo";
 
-const testimonials = [
-  {
-    name: "Katarína D.",
-    text: "Najlepšia fotografka, najkrajšie fotky, najkrajší ateliér.",
-    rating: 5,
-  },
-  {
-    name: "Tomáš V.",
-    text: "Príjemné prostredie na fotenie.",
-    rating: 5,
-  },
-];
+/** Google only shows rating stars when the rating is visible on the page too. */
+const reviewCountLabel =
+  GOOGLE_REVIEW_COUNT === 1
+    ? "1 hodnotenie"
+    : GOOGLE_REVIEW_COUNT < 5
+      ? `${GOOGLE_REVIEW_COUNT} hodnotenia`
+      : `${GOOGLE_REVIEW_COUNT} hodnotení`;
 
 export default function Testimonials() {
   return (
@@ -27,13 +28,13 @@ export default function Testimonials() {
             className="mt-4 inline-flex items-center gap-2 text-sm text-charcoal-600 hover:text-charcoal-800 transition-colors"
           >
             <span className="text-rose-dark text-lg tracking-tight">★★★★★</span>
-            <span className="font-medium">5,0</span>
-            <span>hodnotenie na Google</span>
+            <span className="font-medium">{googleRatingLabel}</span>
+            <span>na Google · {reviewCountLabel}</span>
           </a>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          {testimonials.map((t) => (
+          {GOOGLE_REVIEWS.map((t) => (
             <article
               key={t.name}
               className="bg-white border border-cream-300 p-8 space-y-4 flex flex-col"

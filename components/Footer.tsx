@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, Facebook, Star } from "lucide-react";
-import { GOOGLE_PROFILE_URL } from "@/lib/seo";
+import { GOOGLE_PROFILE_URL, googleRatingLabel } from "@/lib/seo";
 
 const footerLinks = [
   { href: "/novorodenci", label: "Novorodenci" },
@@ -124,7 +124,7 @@ export default function Footer() {
                   className="flex items-center gap-2.5 hover:text-cream-100 transition-colors"
                 >
                   <Star size={15} />
-                  Recenzie na Google (5,0)
+                  Recenzie na Google ({googleRatingLabel})
                 </a>
               </li>
             </ul>
