@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, Facebook, Star } from "lucide-react";
 import { GOOGLE_PROFILE_URL, googleRatingLabel } from "@/lib/seo";
+import SiteLeveledCredit from "@/components/SiteLeveledCredit";
 
 const footerLinks = [
   { href: "/novorodenci", label: "Novorodenci" },
@@ -153,6 +154,7 @@ export default function Footer() {
             >
               Ochrana súkromia
             </Link>
+            <SiteLeveledCredit />
           </div>
         </div>
       </div>
