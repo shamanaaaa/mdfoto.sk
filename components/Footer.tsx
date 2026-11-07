@@ -64,12 +64,12 @@ export default function Footer() {
           {/* Links */}
           <div className="space-y-4">
             <h4 className="section-label text-rose-muted">Navigácia</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3 text-sm">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-charcoal-300 hover:text-cream-100 transition-colors tracking-wide"
+                    className="text-charcoal-300 hover:text-cream-100 transition-colors tracking-wide"
                   >
                     {link.label}
                   </Link>
@@ -81,12 +81,12 @@ export default function Footer() {
           {/* SEO Links */}
           <div className="space-y-4">
             <h4 className="section-label text-rose-muted">Služby</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3 text-sm">
               {seoLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-charcoal-300 hover:text-cream-100 transition-colors tracking-wide"
+                    className="text-charcoal-300 hover:text-cream-100 transition-colors tracking-wide"
                   >
                     {link.label}
                   </Link>
@@ -102,18 +102,18 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+421948505587"
-                  className="flex items-center gap-2.5 hover:text-cream-100 transition-colors"
+                  className="flex items-start gap-2.5 hover:text-cream-100 transition-colors"
                 >
-                  <Phone size={15} />
+                  <Phone size={15} className="mt-0.5 shrink-0" />
                   0948 505 587
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:mdfoto.sk@gmail.com"
-                  className="flex items-center gap-2.5 hover:text-cream-100 transition-colors"
+                  className="flex items-start gap-2.5 hover:text-cream-100 transition-colors"
                 >
-                  <Mail size={15} />
+                  <Mail size={15} className="mt-0.5 shrink-0" />
                   mdfoto.sk@gmail.com
                 </a>
               </li>
@@ -122,9 +122,9 @@ export default function Footer() {
                   href={GOOGLE_PROFILE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 hover:text-cream-100 transition-colors"
+                  className="flex items-start gap-2.5 hover:text-cream-100 transition-colors"
                 >
-                  <Star size={15} />
+                  <Star size={15} className="mt-0.5 shrink-0" />
                   Recenzie na Google ({googleRatingLabel})
                 </a>
               </li>
@@ -138,24 +138,26 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-charcoal-700 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-charcoal-400">
+        {/* Bottom bar: same columns as the grid above, so each block starts on a column edge */}
+        <div className="mt-12 pt-8 border-t border-charcoal-700 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-12 lg:gap-16 text-xs leading-relaxed text-charcoal-400 text-center md:text-left">
           <p>
-            © {new Date().getFullYear()} MDFOTO – Majka Domanová. Všetky
-            práva vyhradené.
+            © {new Date().getFullYear()} MDFOTO – Majka Domanová.{" "}
+            <span className="md:block">Všetky práva vyhradené.</span>
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-3 text-center">
-            <p>
-              Neupravené zábery slúžia len na osobné účely. Akýkoľvek ďalší
-              zásah do fotiek bez súhlasu autora je zakázaný.
-            </p>
-            <Link
-              href="/ochrana-sukromia"
-              className="whitespace-nowrap hover:text-cream-200 transition-colors"
-            >
-              Ochrana súkromia
-            </Link>
-            <SiteLeveledCredit />
-          </div>
+          <p className="md:col-span-2">
+            Neupravené zábery slúžia len na osobné účely. Akýkoľvek ďalší zásah
+            do fotiek bez súhlasu autora je zakázaný.
+          </p>
+          <Link
+            href="/ochrana-sukromia"
+            className="whitespace-nowrap hover:text-cream-200 transition-colors"
+          >
+            Ochrana súkromia
+          </Link>
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <SiteLeveledCredit />
         </div>
       </div>
     </footer>
