@@ -29,6 +29,14 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#039;");
 }
 
+// A Tor-based form-spam bot (seen 2026-11-11) fills fields with random
+// mixed-case strings like "wantRmOthFhCBRIRUfLRku". Real names/notes are never
+// one long word with several capitals inside it.
+function isGibberish(value: string): boolean {
+  const s = value.trim();
+  return /^[A-Za-z]{12,}$/.test(s) && (s.slice(1).match(/[A-Z]/g) || []).length >= 3;
+}
+
 export async function POST(request: Request) {
   try {
     const payload = await request.json();
@@ -39,6 +47,12 @@ export async function POST(request: Request) {
     }
 
     const { name, email, phone, selectedPackage, note } = parsed.data;
+
+    // Pretend success so the bot has nothing to adapt to, but send nothing.
+    if (isGibberish(name) || isGibberish(note)) {
+      console.warn(`Spam dropped: email=${email.slice(0, 80)}`);
+      return NextResponse.json({ ok: true });
+    }
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safePhone = escapeHtml(phone || "-");
